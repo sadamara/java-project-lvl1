@@ -3,5 +3,4 @@
 
 <a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
 
-Using the workflow file name
-This Markdown example adds a status badge for a workflow with the file path .github/workflows/main.yml. The OWNER of the repository is the github organization and the REPOSITORY name is docs.
+![example workflow](https://github.com/github/docs/actions/workflows/main.yml/badge.svg)
