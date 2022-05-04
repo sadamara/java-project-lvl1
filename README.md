@@ -3,4 +3,4 @@
 
 <a href="https://codeclimate.com/github/codeclimate/codeclimate/maintainability"><img src="https://api.codeclimate.com/v1/badges/a99a88d28ad37a79dbf6/maintainability" /></a>
 
-![example workflow](https://github.com/sadamara/java-project-lvl1/blob/61f9440ba4c2fccecb8c3bd8051e4c033046cdba/.github/workflows/hexlet-check.yml)
+![example workflow](https://github.com/sadamara/java-project-lvl1/.github/workflows/hexlet-check.yml)
