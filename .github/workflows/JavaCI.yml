@@ -1,4 +1,4 @@
-name: Run Gradle on PRs
+name: JavaCI
 on: pull_request
 jobs:
   gradle:
