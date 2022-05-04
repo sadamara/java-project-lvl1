@@ -3,7 +3,5 @@
 <file name="/Users/sadamara/app/src/main/java/hexlet/code/App.java">
 </file>
 <file name="/Users/sadamara/app/src/main/java/hexlet/code/Cli.java">
-<error line="7" column="23" severity="error" message="&apos;name&apos; hides a field." source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
-<error line="12" column="16" severity="error" message="&apos;name&apos; hides a field." source="com.puppycrawl.tools.checkstyle.checks.coding.HiddenFieldCheck"/>
 </file>
 </checkstyle>
