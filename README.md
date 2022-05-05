@@ -5,4 +5,4 @@
 
 [![build Status](https://github.com/sadamara/java-project-lvl1/workflows/build/badge.svg)](https://github.com/sadamara/java-project-lvl1/actions)
 
-https://asciinema.org/connect/f3c4d628-a27d-44e6-8ff2-ef30bbc8177e
+https://asciinema.org/a/ff4hLi0dfTOWUfrGTOQP76MXi
