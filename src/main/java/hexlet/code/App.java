@@ -14,7 +14,7 @@ public class App {
             case 1 :
                 System.out.println("Welcome to the Brain Games!");
                 System.out.println("May I have your name?");
-                System.out.println("Hello, " + Cli.getName());
+                System.out.println("Hello, " + Cli.getName() + "!");
                 break;
             case 2 :
                 Even.isEven();

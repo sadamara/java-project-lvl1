@@ -12,7 +12,8 @@ public class Even {
         System.out.println("Welcome to the Brain Games!");
         System.out.println("May I have your name?");
         String name = Cli.getName();
-        System.out.println("Hello, " + name);
+        System.out.println("Hello, " + name + "!");
+        System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         var i = 0;
         final int bestScore = 3;
         final int maxRandomValue = 100;
