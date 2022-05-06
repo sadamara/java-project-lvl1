@@ -5,4 +5,5 @@
 
 [![build Status](https://github.com/sadamara/java-project-lvl1/workflows/build/badge.svg)](https://github.com/sadamara/java-project-lvl1/actions)
 
-https://asciinema.org/a/ff4hLi0dfTOWUfrGTOQP76MXi
+https://asciinema.org/a/ff4hLi0dfTOWUfrGTOQP76MXi Even
+https://asciinema.org/a/roJ177dddRSAjkpnWqQtcZA3y Calc
