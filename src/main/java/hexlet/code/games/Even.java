@@ -1,27 +1,23 @@
-package hexlet.code;
+package hexlet.code.games;
 
-import java.util.Scanner;
+import hexlet.code.Cli;
+import hexlet.code.Engine;
+
 
 public class Even {
-    private String usersAnswer;
-    public static String getUsersAnswer() {
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextLine();
-    }
-    public static void isEven() {
-        System.out.println("Welcome to the Brain Games!");
-        System.out.println("May I have your name?");
+    public static void game() {
+        Engine.getGreet();
         String name = Cli.getName();
         System.out.println("Hello, " + name + "!");
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         var i = 0;
         final int bestScore = 3;
-        final int maxRandomValue = 100;
 
         while (i < bestScore) {
-            int number = (1 + (int) (Math.random() * maxRandomValue));
+            int number = Engine.getRandomNumber();
             System.out.println(number);
-            String answer = getUsersAnswer();
+            System.out.println("Your answer:");
+            String answer = Engine.getUsersAnswerString();
             if (number % 2 == 0 && answer.equals("yes") || number % 2 != 0 && answer.equals("no")) {
                 System.out.println("Correct!");
                 i++;

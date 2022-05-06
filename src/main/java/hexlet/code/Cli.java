@@ -5,7 +5,8 @@ public class Cli {
     private static String name;
     public static String getName() {
         Scanner scanner = new Scanner(System.in);
-        return scanner.nextLine();
+        String name = scanner.nextLine();
+        return name;
     }
 
 }
