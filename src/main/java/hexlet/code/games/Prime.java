@@ -19,7 +19,7 @@ public class Prime {
             for (var e = 2; e < number; e++) {
                 if (number % e == 0) {
                     answer = answer.replace("yes", "no");
-                    break;
+                    //break;
                 }
             }
             System.out.println("Your answer: ");
