@@ -19,7 +19,6 @@ public class Prime {
             for (var e = 2; e < number; e++) {
                 if (number % e == 0) {
                     answer = answer.replace("yes", "no");
-                    //break;
                 }
             }
             System.out.println("Your answer: ");
@@ -28,7 +27,8 @@ public class Prime {
                 System.out.println("Correct!");
                 i++;
             } else {
-                System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was " + "'" + answer + "'" + ".");
+                System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was "
+                        + "'" + answer + "'" + ".");
                 System.out.println("Let's try again, " + name + "!");
                 break;
             }
