@@ -20,7 +20,7 @@ public class Calc {
             var multiply = randomNumberOne * randomNumberTwo;
 
             if (Engine.getRandomOperator() == 1) {
-                System.out.println("Question: " + randomNumberOne + "+" + randomNumberTwo);
+                System.out.println("Question: " + randomNumberOne + " + " + randomNumberTwo);
                 int answer = Engine.getUsersAnswerInt();
                 if (answer == plus) {
                     System.out.println("Correct!");
@@ -31,7 +31,7 @@ public class Calc {
                     break;
                 }
             } else if (Engine.getRandomOperator() == 2) {
-                System.out.println("Question: " + randomNumberOne + "-" + randomNumberTwo);
+                System.out.println("Question: " + randomNumberOne + " - " + randomNumberTwo);
                 int answer2 = Engine.getUsersAnswerInt();
                 if (answer2 == minus) {
                     System.out.println("Correct!");
@@ -42,7 +42,7 @@ public class Calc {
                     break;
                 }
             } else if (Engine.getRandomOperator() == 3) {
-                System.out.println("Question: " + randomNumberOne + "*" + randomNumberTwo);
+                System.out.println("Question: " + randomNumberOne + " * " + randomNumberTwo);
                 int answer3 = Engine.getUsersAnswerInt();
                 if (answer3 == multiply) {
                     System.out.println("Correct!");
