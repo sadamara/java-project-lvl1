@@ -25,7 +25,8 @@ public class Progression {
             }
             var hole = (1 + (int) (Math.random() * length));
             var answer  = progression[hole];
-            progression[hole] = 1111;
+            final var replace = 1111;
+            progression[hole] = replace;
             String question = Arrays.toString(progression);
             question = question.replace("1111", "..");
             question = question.replace(",", "");

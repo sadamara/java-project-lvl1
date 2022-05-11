@@ -10,33 +10,45 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         System.out.println("Please enter the game number and press Enter.");
-        System.out.println("1 - Greet\n" + "2 - Even\n" + "3 - Calc\n" + "4 - GCD\n" + "5 - Progression\n"
-                + "6 - Prime\n" + "0 - Exit\n");
+        System.out.println("""
+                1 - Greet
+                2 - Even
+                3 - Calc
+                4 - GCD
+                5 - Progression
+                6 - Prime
+                0 - Exit
+                """);
         Scanner chooseGame = new Scanner(System.in);
+        final var greet = 1;
+        final var even = 2;
+        final var calc = 3;
+        final var gcd = 4;
+        final var progression = 5;
+        final var prime = 6;
         switch (chooseGame.nextInt()) {
-            case 1 :
+            case greet:
                 Engine.getGreet();
                 String name = Cli.getName();
                 System.out.println("Hello, " + name + "!");
                 break;
-            case 2:
+            case even:
                 Even.game();
                 break;
-            case 3:
+            case calc:
                 Calc.game();
                 break;
-            case 4:
+            case gcd:
                 GCD.game();
                 break;
-            case 5:
+            case progression:
                 Progression.game();
                 break;
-            case 6:
+            case prime:
                 Prime.game();
                 break;
             default:
                 System.out.println("Goodbye!");
-                break;
         }
 
     }

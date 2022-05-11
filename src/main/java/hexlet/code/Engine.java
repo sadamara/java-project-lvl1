@@ -9,12 +9,12 @@ public class Engine {
     }
 
     public static int getRandomNumber() {
-        var finish = 30;
+        final var finish = 30;
         return (1 + (int) (Math.random() * finish));
     }
 
     public static int getRandomNumber10() {
-        var finish = 10;
+        final var finish = 10;
         return (1 + (int) (Math.random() * finish));
     }
 
@@ -29,13 +29,13 @@ public class Engine {
     }
 
     public static int getRandomOperator() {
-        var finish = 3;
+        final var finish = 3;
         return (1 + (int) (Math.random() * finish));
     }
 
     public static int getRandomLengthProgression() {
-        var start = 5;
-        var finish = 10;
+        final var start = 5;
+        final var finish = 10;
         return (start + (int) (Math.random() * finish));
     }
 }

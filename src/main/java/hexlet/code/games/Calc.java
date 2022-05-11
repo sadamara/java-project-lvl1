@@ -18,8 +18,11 @@ public class Calc {
             var plus = randomNumberOne + randomNumberTwo;
             var minus = randomNumberOne - randomNumberTwo;
             var multiply = randomNumberOne * randomNumberTwo;
+            final var plusRandom = 1;
+            final var minusRandom = 2;
+            final var multiplyRandom = 3;
 
-            if (Engine.getRandomOperator() == 1) {
+            if (Engine.getRandomOperator() == plusRandom) {
                 System.out.println("Question: " + randomNumberOne + " + " + randomNumberTwo);
                 int answer = Engine.getUsersAnswerInt();
                 if (answer == plus) {
@@ -30,7 +33,7 @@ public class Calc {
                     System.out.println("Let's try again, " + name + "!");
                     break;
                 }
-            } else if (Engine.getRandomOperator() == 2) {
+            } else if (Engine.getRandomOperator() == minusRandom) {
                 System.out.println("Question: " + randomNumberOne + " - " + randomNumberTwo);
                 int answer2 = Engine.getUsersAnswerInt();
                 if (answer2 == minus) {
@@ -41,7 +44,7 @@ public class Calc {
                     System.out.println("Let's try again, " + name + "!");
                     break;
                 }
-            } else if (Engine.getRandomOperator() == 3) {
+            } else if (Engine.getRandomOperator() == multiplyRandom) {
                 System.out.println("Question: " + randomNumberOne + " * " + randomNumberTwo);
                 int answer3 = Engine.getUsersAnswerInt();
                 if (answer3 == multiply) {
