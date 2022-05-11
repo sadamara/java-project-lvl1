@@ -9,11 +9,13 @@ public class Engine {
     }
 
     public static int getRandomNumber() {
-        return (1 + (int) (Math.random() * 30));
+        var finish = 30;
+        return (1 + (int) (Math.random() * finish));
     }
 
     public static int getRandomNumber10() {
-        return (1 + (int) (Math.random() * 10));
+        var finish = 10;
+        return (1 + (int) (Math.random() * finish));
     }
 
     public static String getUsersAnswerString() {
@@ -27,10 +29,13 @@ public class Engine {
     }
 
     public static int getRandomOperator() {
-        return (1 + (int) (Math.random() * 3));
+        var finish = 3;
+        return (1 + (int) (Math.random() * finish));
     }
 
     public static int getRandomLengthProgression() {
-        return (5 + (int) (Math.random() * 10));
+        var start = 5;
+        var finish = 10;
+        return (start + (int) (Math.random() * finish));
     }
 }
