@@ -15,7 +15,7 @@ public class Even {
 
         while (i < bestScore) {
             int number = Engine.getRandomNumber();
-            System.out.println(number);
+            System.out.println("Question: " + number);
             System.out.println("Your answer:");
             String answer = Engine.getUsersAnswerString();
             if (number % 2 == 0 && answer.equals("yes") || number % 2 != 0 && answer.equals("no")) {
