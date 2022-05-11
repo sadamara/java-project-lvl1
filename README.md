@@ -9,3 +9,4 @@ https://asciinema.org/a/ff4hLi0dfTOWUfrGTOQP76MXi Even
 https://asciinema.org/a/roJ177dddRSAjkpnWqQtcZA3y Calc
 https://asciinema.org/a/VY40JIjzewk9SNE3Qw9ht2yhA GDC
 https://asciinema.org/a/DcZnncCzPlReMYt4CbGg1ES4Y Progression
+https://asciinema.org/a/fPmRUBxmaeTEEVEZMFvP1Ew2N Prime

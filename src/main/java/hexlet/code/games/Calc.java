@@ -30,7 +30,6 @@ public class Calc {
                     System.out.println("Let's try again, " + name + "!");
                     break;
                 }
-
             } else if (Engine.getRandomOperator() == 2) {
                 System.out.println("Question: " + randomNumberOne + "-" + randomNumberTwo);
                 int answer2 = Engine.getUsersAnswerInt();
@@ -42,7 +41,6 @@ public class Calc {
                     System.out.println("Let's try again, " + name + "!");
                     break;
                 }
-
             } else if (Engine.getRandomOperator() == 3) {
                 System.out.println("Question: " + randomNumberOne + "*" + randomNumberTwo);
                 int answer3 = Engine.getUsersAnswerInt();
@@ -55,7 +53,6 @@ public class Calc {
                     break;
                 }
             }
-
         }
         if (i == bestScore) {
             System.out.println("Congratulations, " + name + "!");

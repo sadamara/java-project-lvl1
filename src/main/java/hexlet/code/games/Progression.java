@@ -26,12 +26,12 @@ public class Progression {
             var hole = (1 + (int) (Math.random() * length));
             var answer  = progression[hole];
             progression[hole] = 1111;
-            String Question = Arrays.toString(progression);
-            Question = Question.replace( "1111","..");
-            Question = Question.replace(",", "");
-            Question = Question.replace("[", "");
-            Question = Question.replace("]", "");
-            System.out.println("Question: " + Question);
+            String question = Arrays.toString(progression);
+            question = question.replace("1111", "..");
+            question = question.replace(",", "");
+            question = question.replace("[", "");
+            question = question.replace("]", "");
+            System.out.println("Question: " + question);
             System.out.println("Your answer: ");
             int userAnswer = Engine.getUsersAnswerInt();
             if (answer == userAnswer) {
