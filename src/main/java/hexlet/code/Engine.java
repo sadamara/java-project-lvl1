@@ -1,6 +1,5 @@
 package hexlet.code;
 
-
 import java.util.Scanner;
 
 public class Engine {
@@ -11,6 +10,10 @@ public class Engine {
 
     public static int getRandomNumber() {
         return (1 + (int) (Math.random() * 30));
+    }
+
+    public static int getRandomNumber10() {
+        return (1 + (int) (Math.random() * 10));
     }
 
     public static String getUsersAnswerString() {
@@ -27,4 +30,7 @@ public class Engine {
         return (1 + (int) (Math.random() * 3));
     }
 
+    public static int getRandomLengthProgression() {
+        return (5 + (int) (Math.random() * 10));
+    }
 }

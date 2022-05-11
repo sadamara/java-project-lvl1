@@ -1,0 +1,51 @@
+package hexlet.code.games;
+
+import hexlet.code.Cli;
+import hexlet.code.Engine;
+
+import java.util.Arrays;
+
+public class Progression {
+    public static void game() {
+        Engine.getGreet();
+        String name = Cli.getName();
+        System.out.println("Hello, " + name + "!");
+        System.out.println("What number is missing in the progression?");
+        var i = 0;
+        final int bestScore = 3;
+
+        while (i < bestScore) {
+            int[] progression = new int[Engine.getRandomLengthProgression()];
+            var length = progression.length - 1;
+            var number = Engine.getRandomNumber();
+            var n = Engine.getRandomNumber10();
+            for (var e = 0; progression.length >  e; e++) {
+                progression[e] = number;
+                number += n;
+            }
+            var hole = (1 + (int) (Math.random() * length));
+            var answer  = progression[hole];
+            progression[hole] = 1111;
+            String Question = Arrays.toString(progression);
+            Question = Question.replace( "1111","..");
+            Question = Question.replace(",", "");
+            Question = Question.replace("[", "");
+            Question = Question.replace("]", "");
+            System.out.println("Question: " + Question);
+            System.out.println("Your answer: ");
+            int userAnswer = Engine.getUsersAnswerInt();
+            if (answer == userAnswer) {
+                System.out.println("Correct!");
+                i++;
+            } else {
+                System.out.println(userAnswer + " is wrong answer ;(. Correct answer was " + answer);
+                System.out.println("Let's try again, " + name + "!");
+                break;
+            }
+        }
+        if (i == bestScore) {
+            System.out.println("Congratulations, " + name + "!");
+        }
+    }
+}
+
