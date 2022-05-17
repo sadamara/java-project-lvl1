@@ -11,4 +11,4 @@ https://asciinema.org/a/VY40JIjzewk9SNE3Qw9ht2yhA GDC
 https://asciinema.org/a/DcZnncCzPlReMYt4CbGg1ES4Y Progression
 https://asciinema.org/a/fPmRUBxmaeTEEVEZMFvP1Ew2N Prime
 
-[![Even](https://cdn.shopify.com/s/files/1/0501/2973/1739/files/Hero-Logotype-Blue.png?height=628&pad_color=fff&v=1615572763&width=1200)](https://asciinema.org/a/ff4hLi0dfTOWUfrGTOQP76MXi)
+[![Even](https://asciinema.org/a/ff4hLi0dfTOWUfrGTOQP76MXi)
