@@ -3,9 +3,12 @@ package hexlet.code;
 import java.util.Scanner;
 
 public class Engine {
+    public static String name;
     public static void getGreet() {
         System.out.println("Welcome to the Brain Games!");
         System.out.println("May I have your name?");
+        name = Cli.getName();
+        System.out.println("Hello, " + name + "!");
     }
 
     public static int getRandomNumber() {

@@ -1,14 +1,11 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 
 
 public class Even {
     public static void game() {
         Engine.getGreet();
-        String name = Cli.getName();
-        System.out.println("Hello, " + name + "!");
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
         var i = 0;
         final int bestScore = 3;
@@ -24,16 +21,16 @@ public class Even {
             } else {
                 if (number % 2 == 0) {
                     System.out.println(answer + " is wrong answer ;(. Correct answer was 'yes'.");
-                    System.out.println("Let's try again, " + name + "!");
+                    System.out.println("Let's try again, " + Engine.name + "!");
                 } else {
                     System.out.println(answer + " is wrong answer ;(. Correct answer was 'no'.");
-                    System.out.println("Let's try again, " + name + "!");
+                    System.out.println("Let's try again, " + Engine.name + "!");
                 }
                 break;
             }
         }
         if (i == bestScore) {
-            System.out.println("Congratulations, " + name + "!");
+            System.out.println("Congratulations, " + Engine.name + "!");
         }
     }
 }

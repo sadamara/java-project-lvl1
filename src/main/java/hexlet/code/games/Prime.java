@@ -1,13 +1,10 @@
 package hexlet.code.games;
 
-import hexlet.code.Cli;
 import hexlet.code.Engine;
 
 public class Prime {
     public static void game() {
         Engine.getGreet();
-        String name = Cli.getName();
-        System.out.println("Hello, " + name + "!");
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         var i = 0;
         final int bestScore = 3;
@@ -29,12 +26,12 @@ public class Prime {
             } else {
                 System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was "
                         + "'" + answer + "'" + ".");
-                System.out.println("Let's try again, " + name + "!");
+                System.out.println("Let's try again, " + Engine.name + "!");
                 break;
             }
         }
         if (i == bestScore) {
-            System.out.println("Congratulations, " + name + "!");
+            System.out.println("Congratulations, " + Engine.name + "!");
         }
     }
 }

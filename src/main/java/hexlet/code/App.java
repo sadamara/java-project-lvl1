@@ -19,32 +19,24 @@ public class App {
                 6 - Prime
                 0 - Exit
                 """);
-        Scanner chooseGame = new Scanner(System.in);
-        final var greet = 1;
-        final var even = 2;
-        final var calc = 3;
-        final var gcd = 4;
-        final var progression = 5;
-        final var prime = 6;
-        switch (chooseGame.nextInt()) {
-            case greet:
+        Scanner scanner = new Scanner(System.in);
+        switch (scanner.nextLine()) {
+            case "1":
                 Engine.getGreet();
-                String name = Cli.getName();
-                System.out.println("Hello, " + name + "!");
                 break;
-            case even:
+            case "2":
                 Even.game();
                 break;
-            case calc:
+            case "3":
                 Calc.game();
                 break;
-            case gcd:
+            case "4":
                 GCD.game();
                 break;
-            case progression:
+            case "5":
                 Progression.game();
                 break;
-            case prime:
+            case "6":
                 Prime.game();
                 break;
             default:
