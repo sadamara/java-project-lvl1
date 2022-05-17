@@ -5,6 +5,7 @@ import hexlet.code.Engine;
 public class Calc {
     public static void game() {
         Engine.getGreet();
+        String name = Engine.getName();
         System.out.println("What is the result of the expression?");
         var i = 0;
         final int bestScore = 3;
@@ -27,7 +28,7 @@ public class Calc {
                     i++;
                 } else {
                     System.out.println(answer + " is wrong answer ;(. Correct answer was " + plus);
-                    System.out.println("Let's try again, " + Engine.name + "!");
+                    System.out.println("Let's try again, " + name + "!");
                     break;
                 }
             } else if (Engine.getRandomOperator() == minusRandom) {
@@ -38,7 +39,7 @@ public class Calc {
                     i++;
                 } else {
                     System.out.println(answer2 + " is wrong answer ;(. Correct answer was " + minus);
-                    System.out.println("Let's try again, " + Engine.name + "!");
+                    System.out.println("Let's try again, " + name + "!");
                     break;
                 }
             } else if (Engine.getRandomOperator() == multiplyRandom) {
@@ -49,13 +50,13 @@ public class Calc {
                     i++;
                 } else {
                     System.out.println(answer3 + " is wrong answer ;(. Correct answer was " + multiply);
-                    System.out.println("Let's try again, " + Engine.name + "!");
+                    System.out.println("Let's try again, " + name + "!");
                     break;
                 }
             }
         }
         if (i == bestScore) {
-            System.out.println("Congratulations, " + Engine.name + "!");
+            System.out.println("Congratulations, " + name + "!");
         }
     }
 }

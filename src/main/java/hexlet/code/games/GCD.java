@@ -5,6 +5,7 @@ import hexlet.code.Engine;
 public class GCD {
     public static void game() {
         Engine.getGreet();
+        String name = Engine.getName();
         System.out.println("Find the greatest common divisor of given numbers.");
         var i = 0;
         final int bestScore = 3;
@@ -29,12 +30,12 @@ public class GCD {
             } else {
                 System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was "
                         + "'" + trueAnswer + "'");
-                System.out.println("Let's try again, " + Engine.name + "!");
+                System.out.println("Let's try again, " + name + "!");
                 break;
             }
         }
         if (i == bestScore) {
-            System.out.println("Congratulations, " + Engine.name + "!");
+            System.out.println("Congratulations, " + name + "!");
         }
     }
 }

@@ -7,6 +7,7 @@ import java.util.Arrays;
 public class Progression {
     public static void game() {
         Engine.getGreet();
+        String name = Engine.getName();
         System.out.println("What number is missing in the progression?");
         var i = 0;
         final int bestScore = 3;
@@ -37,12 +38,12 @@ public class Progression {
                 i++;
             } else {
                 System.out.println(userAnswer + " is wrong answer ;(. Correct answer was " + answer);
-                System.out.println("Let's try again, " + Engine.name + "!");
+                System.out.println("Let's try again, " + name + "!");
                 break;
             }
         }
         if (i == bestScore) {
-            System.out.println("Congratulations, " + Engine.name + "!");
+            System.out.println("Congratulations, " + name + "!");
         }
     }
 }

@@ -5,6 +5,7 @@ import hexlet.code.Engine;
 public class Prime {
     public static void game() {
         Engine.getGreet();
+        String name = Engine.getName();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
         var i = 0;
         final int bestScore = 3;
@@ -26,12 +27,12 @@ public class Prime {
             } else {
                 System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was "
                         + "'" + answer + "'" + ".");
-                System.out.println("Let's try again, " + Engine.name + "!");
+                System.out.println("Let's try again, " + name + "!");
                 break;
             }
         }
         if (i == bestScore) {
-            System.out.println("Congratulations, " + Engine.name + "!");
+            System.out.println("Congratulations, " + name + "!");
         }
     }
 }

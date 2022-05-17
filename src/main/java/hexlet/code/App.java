@@ -22,7 +22,7 @@ public class App {
         Scanner scanner = new Scanner(System.in);
         switch (scanner.nextLine()) {
             case "1":
-                Engine.getGreet();
+                Cli.greetUser();
                 break;
             case "2":
                 Even.game();
