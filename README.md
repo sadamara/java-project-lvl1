@@ -1,7 +1,7 @@
 ### Hexlet tests and linter status:
 [![Actions Status](https://github.com/sadamara/java-project-lvl1/workflows/hexlet-check/badge.svg)](https://github.com/sadamara/java-project-lvl1/actions)
 
-[![Code Climate Status](https://github.com/sadamara/java-project-lvl1/workflows/build/badge.svg)](https://codeclimate.com/github/sadamara/java-project-lvl1)
+[![Code Climate Status](https://codeclimate.com/github/sadamara/java-project-lvl1)](https://codeclimate.com/github/sadamara/java-project-lvl1)
 
 [![build Status](https://github.com/sadamara/java-project-lvl1/workflows/build/badge.svg)](https://github.com/sadamara/java-project-lvl1/actions)
 
