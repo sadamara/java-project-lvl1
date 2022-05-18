@@ -1,50 +1,53 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-
-import java.util.Arrays;
+import hexlet.code.Utils;
+import java.util.Random;
 
 public class Progression {
-    public static void runGame() {
-        Engine.getGreet();
-        String name = Engine.getName();
-        System.out.println("What number is missing in the progression?");
-        var i = 0;
-        final int bestScore = 3;
 
-        while (i < bestScore) {
-            int[] progression = new int[Engine.getRandomLengthProgression()];
-            var length = progression.length - 1;
-            var number = Engine.getRandomNumber();
-            var n = Engine.getRandomNumber10();
-            for (var e = 0; progression.length >  e; e++) {
-                progression[e] = number;
-                number += n;
-            }
-            var hole = (1 + (int) (Math.random() * length));
-            var answer  = progression[hole];
-            final var replace = 1111;
-            progression[hole] = replace;
-            String question = Arrays.toString(progression);
-            question = question.replace("1111", "..");
-            question = question.replace(",", "");
-            question = question.replace("[", "");
-            question = question.replace("]", "");
-            System.out.println("Question: " + question);
-            System.out.println("Your answer: ");
-            int userAnswer = Engine.getUsersAnswerInt();
-            if (answer == userAnswer) {
-                System.out.println("Correct!");
-                i++;
-            } else {
-                System.out.println(userAnswer + " is wrong answer ;(. Correct answer was " + answer);
-                System.out.println("Let's try again, " + name + "!");
-                break;
+    private static final String QUESTION = "What number is missing in the progression?";
+    private static final int COUNTER = 1;
+    private static final int MINOFPROGRESSION = 5;
+    private static final int MAXOFPROGRESSION = 10;
+    private static final int MINVALUE = 1;
+    private static final int MAXVALUE = 20;
+    private static final int MINOFSTEP = 1;
+    private static final int MAXOFSTEP = 11;
+
+
+    public static void runGame() {
+        String[][] questionAndAnswer = new String[Engine.BESTSCORE][2];
+        for (int i = 0; i < Engine.BESTSCORE; i++) {
+            int lengthProgression = Utils.getRandomNumber(MINOFPROGRESSION, MAXOFPROGRESSION);
+            String[] progression = setProgression(lengthProgression,
+                    Utils.getRandomNumber(MINVALUE, MAXVALUE),
+                    Utils.getRandomNumber(MINOFSTEP, MAXOFSTEP));
+            Random random = new Random();
+            int correctAnswer = random.nextInt(progression.length);
+            questionAndAnswer[i][0] = generateQuestion(progression, correctAnswer);
+            questionAndAnswer[i][COUNTER] = String.valueOf(progression[correctAnswer]);
+        }
+        Engine.runEngine(QUESTION, questionAndAnswer);
+    }
+
+    private static String[] setProgression(int lengthProgression, int firstElement, int step) {
+        String[] sum = new String[lengthProgression + 1];
+        for (int j = 0; j <= lengthProgression; j++) {
+            firstElement += step;
+            sum[j] = String.valueOf(firstElement);
+        }
+        return sum;
+    }
+
+    private static String generateQuestion(String[] progression, int correctAnswer) {
+        String question = "";
+        for (String number : progression) {
+            question = String.join(" ", question, number);
+            if (number.equals(progression[correctAnswer])) {
+                question = String.join(".. ", question, number).replaceAll(number, "").trim();
             }
         }
-        if (i == bestScore) {
-            System.out.println("Congratulations, " + name + "!");
-        }
+        return question;
     }
 }
-

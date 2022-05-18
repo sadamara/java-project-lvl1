@@ -1,41 +1,36 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class GCD {
-    public static void runGame() {
-        Engine.getGreet();
-        String name = Engine.getName();
-        System.out.println("Find the greatest common divisor of given numbers.");
-        var i = 0;
-        final int bestScore = 3;
+    private static final String QUESTION = "Find the greatest common divisor of given numbers.";
+    private static final int COUNTER = 1;
+    private static final int MINVALUE = 1;
+    private static final int MAXVALUE = 20;
 
-        while (i < bestScore) {
-            int randomNumberOne = Engine.getRandomNumber();
-            int randomNumberTwo = Engine.getRandomNumber();
-            System.out.println("Question: " + randomNumberOne + " " + randomNumberTwo);
-            while (randomNumberOne != 0 && randomNumberTwo != 0) {
-                if (randomNumberOne > randomNumberTwo) {
-                    randomNumberOne = randomNumberOne % randomNumberTwo;
-                } else {
-                    randomNumberTwo = randomNumberTwo % randomNumberOne;
-                }
-            }
-            int trueAnswer = randomNumberOne + randomNumberTwo;
-            System.out.println("Your answer: ");
-            int userAnswer = Engine.getUsersAnswerInt();
-            if (trueAnswer == userAnswer) {
-                System.out.println("Correct!");
-                i++;
-            } else {
-                System.out.println("'" + userAnswer + "'" + " is wrong answer ;(. Correct answer was "
-                        + "'" + trueAnswer + "'");
-                System.out.println("Let's try again, " + name + "!");
-                break;
-            }
+    public static void runGame() {
+
+        String[][] questionAndAnswer = new String[Engine.BESTSCORE][2];
+        for (int i = 0; i < Engine.BESTSCORE; i++) {
+            int firstNumber = Utils.getRandomNumber(MINVALUE, MAXVALUE);
+            int secondNumber = Utils.getRandomNumber(MINVALUE, MAXVALUE);
+            String question = firstNumber + " " + secondNumber;
+            questionAndAnswer[i][0] = question;
+            int correctAnswer = isGCD(firstNumber, secondNumber);
+            questionAndAnswer[i][COUNTER] = String.valueOf(correctAnswer);
         }
-        if (i == bestScore) {
-            System.out.println("Congratulations, " + name + "!");
+        Engine.runEngine(QUESTION, questionAndAnswer);
+    }
+
+    private static int isGCD(int firstNumber, int secondNumber) {
+        int trueAnswer = 0;
+        while (secondNumber != 0) {
+            int modulo = firstNumber % secondNumber;
+            firstNumber = secondNumber;
+            secondNumber = modulo;
+            trueAnswer = firstNumber;
         }
+        return trueAnswer;
     }
 }
