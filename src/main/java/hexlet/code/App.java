@@ -25,19 +25,19 @@ public class App {
                 Cli.greetUser();
                 break;
             case "2":
-                Even.game();
+                Even.runGame();
                 break;
             case "3":
-                Calc.game();
+                Calc.runGame();
                 break;
             case "4":
-                GCD.game();
+                GCD.runGame();
                 break;
             case "5":
-                Progression.game();
+                Progression.runGame();
                 break;
             case "6":
-                Prime.game();
+                Prime.runGame();
                 break;
             default:
                 System.out.println("Goodbye!");

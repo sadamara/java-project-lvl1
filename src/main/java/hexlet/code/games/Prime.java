@@ -3,7 +3,7 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 
 public class Prime {
-    public static void game() {
+    public static void runGame() {
         Engine.getGreet();
         String name = Engine.getName();
         System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");

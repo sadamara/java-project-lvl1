@@ -4,7 +4,7 @@ import hexlet.code.Engine;
 
 
 public class Even {
-    public static void game() {
+    public static void runGame() {
         Engine.getGreet();
         String name = Engine.getName();
         System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");

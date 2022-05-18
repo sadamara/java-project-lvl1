@@ -5,7 +5,7 @@ import hexlet.code.Engine;
 import java.util.Arrays;
 
 public class Progression {
-    public static void game() {
+    public static void runGame() {
         Engine.getGreet();
         String name = Engine.getName();
         System.out.println("What number is missing in the progression?");
