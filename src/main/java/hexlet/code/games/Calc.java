@@ -4,41 +4,44 @@ import hexlet.code.Utils;
 import hexlet.code.Engine;
 
 public class Calc {
-    private static final String QUESTION = "What is the result of the expression?";
+    private static final String DESCRIPTION = "What is the result of the expression?";
     private static final int COUNTER = 1;
     private static final int MINVALUE = 1;
     private static final int MAXVALUE = 20;
 
     public static void runGame() {
-        String[][] questionAndAnswer = new String[Engine.BESTSCORE][2];
-        for (int i = 0; i < Engine.BESTSCORE; i++) {
+        String[][] roundData = new String[Engine.ROUND_COUNT][2];
+        for (int i = 0; i < Engine.ROUND_COUNT; i++) {
             int firstNumber = Utils.getRandomNumber(MINVALUE, MAXVALUE);
             int secondNumber = Utils.getRandomNumber(MINVALUE, MAXVALUE);
-            String randomOperator = Utils.getRandomOperator();
-            String question = firstNumber + " " + randomOperator + " " + secondNumber;
-            questionAndAnswer[i][0] = question;
-            questionAndAnswer[i][COUNTER] = String.valueOf(
-                    getTrueAnswer(randomOperator, firstNumber, secondNumber));
+            char randomOperator = getRandomOperator();
+            String description = firstNumber + " " + randomOperator + " " + secondNumber;
+            roundData[i][0] = description;
+            roundData[i][COUNTER] = String.valueOf(
+                    calculate(randomOperator, firstNumber, secondNumber));
         }
-        Engine.runEngine(QUESTION, questionAndAnswer);
+        Engine.runEngine(DESCRIPTION, roundData);
     }
 
-    private static int getTrueAnswer(String randomOperator, int firstNumber, int secondNumber) {
-        int answer = 0;
+    private static int calculate(char randomOperator, int firstNumber, int secondNumber) {
+
         switch (randomOperator) {
-            case "+":
-                answer = firstNumber + secondNumber;
-                break;
-            case "-" :
-                answer = firstNumber - secondNumber;
-                break;
-            case "*":
-                answer = firstNumber * secondNumber;
-                break;
+            case '+':
+                return firstNumber + secondNumber;
+            case '-':
+                return firstNumber - secondNumber;
+            case '*':
+                return firstNumber * secondNumber;
             default:
-                System.out.println("Unexpected value");
-                break;
+                throw new RuntimeException("Unexpected value");
         }
-        return answer;
+    }
+
+    public static char getRandomOperator() {
+        char[] operators = {'+', '-', '*'};
+        final int max = 3;
+        int i = ((int) (Math.random() * max));
+        return operators[i];
     }
 }
+

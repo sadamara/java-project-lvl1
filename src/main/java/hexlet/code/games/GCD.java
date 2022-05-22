@@ -4,33 +4,33 @@ import hexlet.code.Engine;
 import hexlet.code.Utils;
 
 public class GCD {
-    private static final String QUESTION = "Find the greatest common divisor of given numbers.";
+    private static final String DESCRIPTION = "Find the greatest common divisor of given numbers.";
     private static final int COUNTER = 1;
     private static final int MINVALUE = 1;
     private static final int MAXVALUE = 20;
 
     public static void runGame() {
 
-        String[][] questionAndAnswer = new String[Engine.BESTSCORE][2];
-        for (int i = 0; i < Engine.BESTSCORE; i++) {
+        String[][] roundData = new String[Engine.ROUND_COUNT][2];
+        for (int i = 0; i < Engine.ROUND_COUNT; i++) {
             int firstNumber = Utils.getRandomNumber(MINVALUE, MAXVALUE);
             int secondNumber = Utils.getRandomNumber(MINVALUE, MAXVALUE);
-            String question = firstNumber + " " + secondNumber;
-            questionAndAnswer[i][0] = question;
-            int correctAnswer = isGCD(firstNumber, secondNumber);
-            questionAndAnswer[i][COUNTER] = String.valueOf(correctAnswer);
+            String description = firstNumber + " " + secondNumber;
+            roundData[i][0] = description;
+            int correctAnswer = calculateGCD(firstNumber, secondNumber);
+            roundData[i][COUNTER] = String.valueOf(correctAnswer);
         }
-        Engine.runEngine(QUESTION, questionAndAnswer);
+        Engine.runEngine(DESCRIPTION, roundData);
     }
 
-    private static int isGCD(int firstNumber, int secondNumber) {
-        int trueAnswer = 0;
+    private static int calculateGCD(int firstNumber, int secondNumber) {
+        int gcd = 0;
         while (secondNumber != 0) {
             int modulo = firstNumber % secondNumber;
             firstNumber = secondNumber;
             secondNumber = modulo;
-            trueAnswer = firstNumber;
+            gcd = firstNumber;
         }
-        return trueAnswer;
+        return gcd;
     }
 }
