@@ -17,15 +17,7 @@ public class Progression {
 
     public static void runGame() {
         String[][] roundData = new String[Engine.ROUND_COUNT][2];
-        for (int i = 0; i < Engine.ROUND_COUNT; i++) {
-            int progressionLength = Utils.getRandomNumber(MINOFPROGRESSION, MAXOFPROGRESSION);
-            int[] progression = generateProgression(progressionLength,
-                    Utils.getRandomNumber(MINVALUE, MAXVALUE),
-                    Utils.getRandomNumber(MINOFSTEP, MAXOFSTEP));
-            int correctAnswer = Utils.getRandomNumber(MINVALUE, progressionLength);
-            roundData[i][0] = generateQuestion(progression, correctAnswer);
-            roundData[i][COUNTER] = String.valueOf(progression[correctAnswer]);
-        }
+        roundData = generateRoundData(roundData);
         Engine.runEngine(DESCRIPTION, roundData);
     }
 
@@ -48,5 +40,18 @@ public class Progression {
             }
         }
         return question;
+    }
+
+    public static String[][] generateRoundData(String[][] roundData) {
+        for (int i = 0; i < Engine.ROUND_COUNT; i++) {
+            int progressionLength = Utils.getRandomNumber(MINOFPROGRESSION, MAXOFPROGRESSION);
+            int[] progression = generateProgression(progressionLength,
+                    Utils.getRandomNumber(MINVALUE, MAXVALUE),
+                    Utils.getRandomNumber(MINOFSTEP, MAXOFSTEP));
+            int correctAnswer = Utils.getRandomNumber(MINVALUE, progressionLength);
+            roundData[i][0] = generateQuestion(progression, correctAnswer);
+            roundData[i][COUNTER] = String.valueOf(progression[correctAnswer]);
+        }
+        return roundData;
     }
 }

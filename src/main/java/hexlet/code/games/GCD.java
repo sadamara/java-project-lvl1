@@ -12,14 +12,7 @@ public class GCD {
     public static void runGame() {
 
         String[][] roundData = new String[Engine.ROUND_COUNT][2];
-        for (int i = 0; i < Engine.ROUND_COUNT; i++) {
-            int firstNumber = Utils.getRandomNumber(MINVALUE, MAXVALUE);
-            int secondNumber = Utils.getRandomNumber(MINVALUE, MAXVALUE);
-            String description = firstNumber + " " + secondNumber;
-            roundData[i][0] = description;
-            int correctAnswer = calculateGCD(firstNumber, secondNumber);
-            roundData[i][COUNTER] = String.valueOf(correctAnswer);
-        }
+        roundData = generateRoundData(roundData);
         Engine.runEngine(DESCRIPTION, roundData);
     }
 
@@ -32,5 +25,17 @@ public class GCD {
             gcd = firstNumber;
         }
         return gcd;
+    }
+
+    public static String[][] generateRoundData(String[][] roundData) {
+        for (int i = 0; i < Engine.ROUND_COUNT; i++) {
+            int firstNumber = Utils.getRandomNumber(MINVALUE, MAXVALUE);
+            int secondNumber = Utils.getRandomNumber(MINVALUE, MAXVALUE);
+            String description = firstNumber + " " + secondNumber;
+            roundData[i][0] = description;
+            int correctAnswer = calculateGCD(firstNumber, secondNumber);
+            roundData[i][COUNTER] = String.valueOf(correctAnswer);
+        }
+        return roundData;
     }
 }
