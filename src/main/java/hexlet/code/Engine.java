@@ -14,7 +14,7 @@ public class Engine {
         System.out.println("Hello, " + playerName + "!");
         System.out.println(description);
 
-        for (int i = 0; i < ROUND_COUNT; i++) {
+        for (int i = 0; i < roundsData.length; i++) {
             System.out.println("Question: " + roundsData[i][QUESTION]);
             String playerAnswer = scanner.nextLine();
             System.out.println("Your answer: " + playerAnswer);
