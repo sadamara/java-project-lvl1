@@ -12,7 +12,7 @@ public class Progression {
     private static final int MINVALUE = 1;
     private static final int MAXVALUE = 20;
     private static final int MINOFSTEP = 1;
-    private static final int MAXOFSTEP = 11;
+    private static final int MAXOFSTEP = 10;
 
 
     public static void runGame() {
@@ -22,16 +22,16 @@ public class Progression {
             int[] progression = generateProgression(progressionLength,
                     Utils.getRandomNumber(MINVALUE, MAXVALUE),
                     Utils.getRandomNumber(MINOFSTEP, MAXOFSTEP));
-            int correctAnswer = Utils.getRandomNumber(MINVALUE, progression.length);
+            int correctAnswer = Utils.getRandomNumber(MINVALUE, progressionLength);
             roundData[i][0] = generateQuestion(progression, correctAnswer);
             roundData[i][COUNTER] = String.valueOf(progression[correctAnswer]);
         }
         Engine.runEngine(DESCRIPTION, roundData);
     }
 
-    private static int[] generateProgression(int lengthProgression, int firstElement, int step) {
-        int[] newProgression = new int[lengthProgression + 1];
-        for (int j = 0; j <= lengthProgression; j++) {
+    private static int[] generateProgression(int progressionLength, int firstElement, int step) {
+        int[] newProgression = new int[progressionLength + 1];
+        for (int j = 0; j <= progressionLength; j++) {
             firstElement += step;
             newProgression[j] = firstElement;
         }
@@ -42,7 +42,7 @@ public class Progression {
         String question = "";
         for (var number : progression) {
             var numberToString = Integer.toString(number);
-            question = String.join(" ", question, Integer.toString(number));
+            question = String.join(" ", question, numberToString);
             if (number == progression[correctAnswer]) {
                 question = String.join(".. ", question, numberToString).replaceAll(numberToString, "").trim();
             }
