@@ -11,15 +11,7 @@ public class Calc {
 
     public static void runGame() {
         String[][] roundData = new String[Engine.ROUND_COUNT][2];
-        for (int i = 0; i < Engine.ROUND_COUNT; i++) {
-            int firstNumber = Utils.getRandomNumber(MINVALUE, MAXVALUE);
-            int secondNumber = Utils.getRandomNumber(MINVALUE, MAXVALUE);
-            char randomOperator = getRandomOperator();
-            String description = firstNumber + " " + randomOperator + " " + secondNumber;
-            roundData[i][0] = description;
-            roundData[i][COUNTER] = String.valueOf(
-                    calculate(randomOperator, firstNumber, secondNumber));
-        }
+        roundData = generateRoundData(roundData);
         Engine.runEngine(DESCRIPTION, roundData);
     }
 
@@ -42,6 +34,19 @@ public class Calc {
         final int max = 3;
         int i = ((int) (Math.random() * max));
         return operators[i];
+    }
+
+    public static String[][] generateRoundData(String[][] roundData) {
+        for (int i = 0; i < Engine.ROUND_COUNT; i++) {
+            int firstNumber = Utils.getRandomNumber(MINVALUE, MAXVALUE);
+            int secondNumber = Utils.getRandomNumber(MINVALUE, MAXVALUE);
+            char randomOperator = getRandomOperator();
+            String description = firstNumber + " " + randomOperator + " " + secondNumber;
+            roundData[i][0] = description;
+            roundData[i][COUNTER] = String.valueOf(
+                    calculate(randomOperator, firstNumber, secondNumber));
+        }
+        return roundData;
     }
 }
 
