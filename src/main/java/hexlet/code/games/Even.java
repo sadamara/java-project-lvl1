@@ -12,7 +12,7 @@ public class Even {
     public static void runGame() {
         String[][] roundData = new String[Engine.ROUND_COUNT][2];
         for (int i = 0; i < Engine.ROUND_COUNT; i++) {
-            roundData[i] = generateRoundData();
+            roundData[i] = generateRoundDataEven();
         }
         Engine.runEngine(DESCRIPTION, roundData);
     }
@@ -21,7 +21,7 @@ public class Even {
         return (evenNumber % 2) == 0;
     }
 
-    public static String[] generateRoundData() {
+    public static String[] generateRoundDataEven() {
         String[] roundData = new String[2];
         int number = Utils.getRandomNumber(MINVALUE, MAXVALUE);
         roundData[0] = String.valueOf(number);

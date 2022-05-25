@@ -12,7 +12,7 @@ public class GCD {
     public static void runGame() {
         String[][] roundData = new String[Engine.ROUND_COUNT][2];
         for (int i = 0; i < Engine.ROUND_COUNT; i++) {
-            roundData[i] = generateRoundData();
+            roundData[i] = generateRoundDataGCD();
         }
         Engine.runEngine(DESCRIPTION, roundData);
     }
@@ -28,7 +28,7 @@ public class GCD {
         return gcd;
     }
 
-    public static String[] generateRoundData() {
+    public static String[] generateRoundDataGCD() {
         String[] roundData = new String[2];
         int firstNumber = Utils.getRandomNumber(MINVALUE, MAXVALUE);
         int secondNumber = Utils.getRandomNumber(MINVALUE, MAXVALUE);

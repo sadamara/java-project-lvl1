@@ -12,7 +12,7 @@ public class Prime {
     public static void runGame() {
         String[][] roundData = new String[Engine.ROUND_COUNT][2];
         for (int i = 0; i < Engine.ROUND_COUNT; i++) {
-            roundData[i] = generateRoundData();
+            roundData[i] = generateRoundDataPrime();
         }
         Engine.runEngine(DESCRIPTION, roundData);
     }
@@ -26,7 +26,7 @@ public class Prime {
         return true;
     }
 
-    public static String[] generateRoundData() {
+    public static String[] generateRoundDataPrime() {
         String[] roundData = new String[2];
         int primeNumber = Utils.getRandomNumber(MINVALUE, MAXVALUE);
         roundData[0] = String.valueOf(primeNumber);

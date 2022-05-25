@@ -18,7 +18,7 @@ public class Progression {
     public static void runGame() {
         String[][] roundData = new String[Engine.ROUND_COUNT][2];
         for (int i = 0; i < Engine.ROUND_COUNT; i++) {
-            roundData[i] = generateRoundData();
+            roundData[i] = generateRoundDataProgression();
         }
         Engine.runEngine(DESCRIPTION, roundData);
     }
@@ -44,7 +44,7 @@ public class Progression {
         return question;
     }
 
-    public static String[] generateRoundData() {
+    public static String[] generateRoundDataProgression() {
         String[] roundData = new String[2];
         int progressionLength = Utils.getRandomNumber(MINOFPROGRESSION, MAXOFPROGRESSION);
         int[] progression = generateProgression(progressionLength,
