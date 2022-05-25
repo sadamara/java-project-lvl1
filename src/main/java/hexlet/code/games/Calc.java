@@ -33,8 +33,8 @@ public class Calc {
 
     public static char getRandomOperator() {
         char[] operators = {'+', '-', '*'};
-         int min = 0;
-         int max = 2;
+        int min = 0;
+        int max = 2;
         int i = Utils.getRandomNumber(min, max);
         return operators[i];
     }
