@@ -3,6 +3,7 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
+
 public class Prime {
     private static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
     private static final int COUNTER = 1;
@@ -18,7 +19,7 @@ public class Prime {
     }
 
     private static boolean isPrime(int primeNumber) {
-        for (var e = 2; e < primeNumber; e++) {
+        for (var e = 2; e < Math.sqrt(primeNumber); e++) {
             if (primeNumber == 1 || primeNumber % e == 0) {
                 return false;
             }
