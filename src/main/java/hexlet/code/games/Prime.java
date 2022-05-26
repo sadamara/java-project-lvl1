@@ -19,7 +19,7 @@ public class Prime {
 
     private static boolean isPrime(int primeNumber) {
         for (var e = 2; e < primeNumber; e++) {
-            if (primeNumber % e == 0) {
+            if (primeNumber == 1 || primeNumber % e == 0) {
                 return false;
             }
         }
