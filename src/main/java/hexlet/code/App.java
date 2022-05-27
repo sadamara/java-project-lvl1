@@ -42,6 +42,6 @@ public class App {
             default:
                 System.out.println("Goodbye!");
         }
-
+        scanner.close();
     }
 }

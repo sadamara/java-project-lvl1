@@ -5,9 +5,9 @@ import hexlet.code.Engine;
 
 public class Calc {
     private static final String DESCRIPTION = "What is the result of the expression?";
-    private static final int COUNTER = 1;
-    private static final int MINVALUE = 1;
-    private static final int MAXVALUE = 20;
+    private static final int MIN_VALUE = 1;
+    private static final int MAX_VALUE = 20;
+    private static final char[] OPERATORS = {'+', '-', '*'};
 
     public static void runGame() {
         String[][] roundData = new String[Engine.ROUND_COUNT][2];
@@ -32,21 +32,18 @@ public class Calc {
     }
 
     public static char getRandomOperator() {
-        char[] operators = {'+', '-', '*'};
-        int min = 0;
-        int max = 2;
-        int i = Utils.getRandomNumber(min, max);
-        return operators[i];
+        int i = Utils.getRandomNumber(0, (OPERATORS.length - 1));
+        return OPERATORS[i];
     }
 
     public static String[] generateRoundDataCalc() {
         String[] roundData = new String[2];
-        int firstNumber = Utils.getRandomNumber(MINVALUE, MAXVALUE);
-        int secondNumber = Utils.getRandomNumber(MINVALUE, MAXVALUE);
+        int firstNumber = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
+        int secondNumber = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
         char randomOperator = getRandomOperator();
-        String description = firstNumber + " " + randomOperator + " " + secondNumber;
-        roundData[0] = description;
-        roundData[COUNTER] = String.valueOf(
+        String question = firstNumber + " " + randomOperator + " " + secondNumber;
+        roundData[0] = question;
+        roundData[1] = String.valueOf(
                     calculate(randomOperator, firstNumber, secondNumber));
         return roundData;
     }

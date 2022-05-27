@@ -6,9 +6,8 @@ import hexlet.code.Utils;
 
 public class Prime {
     private static final String DESCRIPTION = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
-    private static final int COUNTER = 1;
-    private static final int MINVALUE = 1;
-    private static final int MAXVALUE = 20;
+    private static final int MIN_VALUE = 1;
+    private static final int MAX_VALUE = 20;
 
     public static void runGame() {
         String[][] roundData = new String[Engine.ROUND_COUNT][2];
@@ -29,9 +28,9 @@ public class Prime {
 
     public static String[] generateRoundDataPrime() {
         String[] roundData = new String[2];
-        int primeNumber = Utils.getRandomNumber(MINVALUE, MAXVALUE);
+        int primeNumber = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
         roundData[0] = String.valueOf(primeNumber);
-        roundData[COUNTER] = (isPrime(primeNumber)) ? "yes" : "no";
+        roundData[1] = (isPrime(primeNumber)) ? "yes" : "no";
         return roundData;
     }
 }

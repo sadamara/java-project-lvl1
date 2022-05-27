@@ -6,13 +6,12 @@ import hexlet.code.Utils;
 public class Progression {
 
     private static final String DESCRIPTION = "What number is missing in the progression?";
-    private static final int COUNTER = 1;
-    private static final int MINOFPROGRESSION = 5;
-    private static final int MAXOFPROGRESSION = 10;
-    private static final int MINVALUE = 1;
-    private static final int MAXVALUE = 20;
-    private static final int MINOFSTEP = 1;
-    private static final int MAXOFSTEP = 10;
+    private static final int MIN_OF_PROGRESSION = 5;
+    private static final int MAX_OF_PROGRESSION = 10;
+    private static final int MIN_VALUE = 1;
+    private static final int MAX_VALUE = 20;
+    private static final int MIN_OF_STEP = 1;
+    private static final int MAX_OF_STEP = 10;
 
 
     public static void runGame() {
@@ -46,13 +45,13 @@ public class Progression {
 
     public static String[] generateRoundDataProgression() {
         String[] roundData = new String[2];
-        int progressionLength = Utils.getRandomNumber(MINOFPROGRESSION, MAXOFPROGRESSION);
+        int progressionLength = Utils.getRandomNumber(MIN_OF_PROGRESSION, MAX_OF_PROGRESSION);
         int[] progression = generateProgression(progressionLength,
-                Utils.getRandomNumber(MINVALUE, MAXVALUE),
-                Utils.getRandomNumber(MINOFSTEP, MAXOFSTEP));
-        int correctAnswer = Utils.getRandomNumber(MINVALUE, progressionLength);
+                Utils.getRandomNumber(MIN_VALUE, MAX_VALUE),
+                Utils.getRandomNumber(MIN_OF_STEP, MAX_OF_STEP));
+        int correctAnswer = Utils.getRandomNumber(MIN_VALUE, progressionLength);
         roundData[0] = generateQuestion(progression, correctAnswer);
-        roundData[COUNTER] = String.valueOf(progression[correctAnswer]);
+        roundData[1] = String.valueOf(progression[correctAnswer]);
         return roundData;
     }
 }

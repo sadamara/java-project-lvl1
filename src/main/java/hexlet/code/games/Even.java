@@ -5,9 +5,8 @@ import hexlet.code.Utils;
 
 public class Even {
     private static final String DESCRIPTION = "Answer 'yes' if number even otherwise answer 'no'.";
-    private static final int COUNTER = 1;
-    private static final int MINVALUE = 1;
-    private static final int MAXVALUE = 50;
+    private static final int MIN_VALUE = 1;
+    private static final int MAX_VALUE = 50;
 
     public static void runGame() {
         String[][] roundData = new String[Engine.ROUND_COUNT][2];
@@ -17,15 +16,15 @@ public class Even {
         Engine.runEngine(DESCRIPTION, roundData);
     }
 
-    private static boolean isEven(int evenNumber) {
-        return (evenNumber % 2) == 0;
+    private static boolean isEven(int number) {
+        return (number % 2) == 0;
     }
 
     public static String[] generateRoundDataEven() {
         String[] roundData = new String[2];
-        int number = Utils.getRandomNumber(MINVALUE, MAXVALUE);
+        int number = Utils.getRandomNumber(MIN_VALUE, MAX_VALUE);
         roundData[0] = String.valueOf(number);
-        roundData[COUNTER] = (isEven(number) ? "yes" : "no");
+        roundData[1] = (isEven(number) ? "yes" : "no");
         return roundData;
     }
 }
