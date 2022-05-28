@@ -18,8 +18,11 @@ public class Prime {
     }
 
     private static boolean isPrime(int primeNumber) {
+        if (primeNumber == 1) {
+            return false;
+        }
         for (var e = 2; e < primeNumber; e++) {
-            if (primeNumber == 1 || primeNumber % e == 0) {
+            if (primeNumber % e == 0) {
                 return false;
             }
         }
